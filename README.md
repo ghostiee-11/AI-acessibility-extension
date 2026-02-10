@@ -1,8 +1,6 @@
 # 🤖 AI Accessibility Assistant - Premium Edition
 
-**The most advanced Chrome extension for accessibility, productivity, and AI-powered web enhancement.**
 
-![Extension Icon](icons/icon128.png)
 
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-blue)](https://chrome.google.com/webstore)
 [![Version](https://img.shields.io/badge/version-1.0.0-green)]()
@@ -341,63 +339,10 @@ Select any text → Quick action popup appears:
 
 ---
 
-## 📈 Roadmap
-
-### Coming Soon
-- [ ] Multiple dark mode themes
-- [ ] Reading progress indicator
-- [ ] Translate text feature
-- [ ] Bookmark summaries
-- [ ] Sync settings across devices
-- [ ] Chrome Web Store publication
-- [ ] Firefox version
-- [ ] Mobile support
-
----
-
-## 🤝 Contributing
-
-Contributions welcome! Feel free to:
-- 🐛 Report bugs
-- 💡 Suggest features
-- 🔧 Submit pull requests
-- 📖 Improve documentation
-
----
 
 ## 📄 License
 
 MIT License - Free to use and modify
-
----
-
-## 🙏 Acknowledgments
-
-- **Groq** - Lightning-fast LLM inference
-- **Google** - Gemini API
-- **Chrome Extensions Team** - Excellent documentation
-- **Open Source Community** - Inspiration and support
-
----
-
-## 📞 Support
-
-Need help? Check:
-1. [Troubleshooting](#-troubleshooting) section
-2. [Usage Guide](#-usage-guide)
-3. Open an issue on GitHub
-
----
-
-<div align="center">
-
-**Made with ❤️ for better web accessibility**
-
-⭐ **Star this project if you find it useful!** ⭐
-
-[Report Bug](https://github.com) · [Request Feature](https://github.com) · [Documentation](README.md)
-
-</div>
 
 ---
 
