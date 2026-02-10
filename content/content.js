@@ -226,7 +226,7 @@ class ContentScript {
         if (injected) injected.remove();
     }
 
-    // Force dark backgrounds on elements with inline white styles
+    // Catch elements that set white backgrounds via inline styles
     _forceDarkOnDynamicElements() {
         const prev = document.getElementById('ai-dark-inject');
         if (prev) prev.remove();
@@ -234,7 +234,6 @@ class ContentScript {
         const style = document.createElement('style');
         style.id = 'ai-dark-inject';
         style.textContent = `
-            /* Catch elements with inline white/light backgrounds */
             html.dark-mode-active [style*="background-color: rgb(255"],
             html.dark-mode-active [style*="background-color: white"],
             html.dark-mode-active [style*="background-color:#fff"],
@@ -243,43 +242,9 @@ class ContentScript {
             html.dark-mode-active [style*="background:#fff"],
             html.dark-mode-active [style*="background-color: rgb(245"],
             html.dark-mode-active [style*="background-color: rgb(248"],
-            html.dark-mode-active [style*="background-color: rgb(240"],
-            html.dark-mode-active [style*="background-color: rgb(242"],
             html.dark-mode-active [style*="background-color: rgb(250"],
-            html.dark-mode-active [style*="background-color: rgb(230"],
-            html.dark-mode-active [style*="background-color: rgb(232"],
-            html.dark-mode-active [style*="background-color: rgb(233"],
-            html.dark-mode-active [style*="background-color: rgb(235"],
-            html.dark-mode-active [style*="background-color: rgb(247"],
-            html.dark-mode-active [style*="background-color: rgb(249"],
-            html.dark-mode-active [style*="background-color: rgb(252"],
-            html.dark-mode-active [style*="background-color: rgb(253"],
-            html.dark-mode-active [style*="background-color: rgb(254"] {
+            html.dark-mode-active [style*="background-color: rgb(252"] {
                 background-color: transparent !important;
-            }
-            /* Catch inline white text on dark-to-dark (shouldn't happen but safety) */
-            html.dark-mode-active [style*="color: rgb(0, 0, 0"],
-            html.dark-mode-active [style*="color: rgb(32"],
-            html.dark-mode-active [style*="color: rgb(33"],
-            html.dark-mode-active [style*="color: rgb(34"],
-            html.dark-mode-active [style*="color: rgb(51"],
-            html.dark-mode-active [style*="color: rgb(68"],
-            html.dark-mode-active [style*="color: rgb(85"],
-            html.dark-mode-active [style*="color: rgb(102"],
-            html.dark-mode-active [style*="color: black"],
-            html.dark-mode-active [style*="color:#000"],
-            html.dark-mode-active [style*="color: #222"],
-            html.dark-mode-active [style*="color: #333"] {
-                color: #e0e0e0 !important;
-            }
-            /* Don't affect our extension UI */
-            html.dark-mode-active #ai-assistant-toolbar *,
-            html.dark-mode-active #ai-assistant-toast,
-            html.dark-mode-active #ai-assistant-quick-actions *,
-            html.dark-mode-active #ai-assistant-summary-modal *,
-            html.dark-mode-active #ai-assistant-loading * {
-                color: unset;
-                background-color: unset;
             }
         `;
         document.head.appendChild(style);

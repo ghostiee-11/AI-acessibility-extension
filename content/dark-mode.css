@@ -1,15 +1,18 @@
-/* AI Accessibility Assistant — Premium Dark Mode */
-/* Direct color override approach — no filter:invert hackery */
-/* Only darkens backgrounds and lightens text, buttons stay natural */
+/* AI Accessibility Assistant — Dark Mode */
+/* MINIMAL approach: only darken backgrounds + lighten text */
+/* Buttons, logos, images, icons, SVGs = UNTOUCHED */
 
-/* ─── ROOT / BODY ─── */
-html.dark-mode-active,
-html.dark-mode-active body {
+/* ─── ROOT BACKGROUND ONLY ─── */
+html.dark-mode-active {
     background-color: #1a1a2e !important;
-    color: #e0e0e0 !important;
 }
 
-/* ─── ALL BLOCK ELEMENTS: dark background, light text ─── */
+html.dark-mode-active body {
+    background-color: #1a1a2e !important;
+    color: #ddd !important;
+}
+
+/* ─── CONTAINER BACKGROUNDS (just the boxes, not buttons/interactive) ─── */
 html.dark-mode-active div,
 html.dark-mode-active section,
 html.dark-mode-active article,
@@ -17,54 +20,34 @@ html.dark-mode-active main,
 html.dark-mode-active aside,
 html.dark-mode-active header,
 html.dark-mode-active footer,
-html.dark-mode-active nav,
-html.dark-mode-active form,
-html.dark-mode-active fieldset,
-html.dark-mode-active details,
-html.dark-mode-active summary,
-html.dark-mode-active dialog,
-html.dark-mode-active figure,
-html.dark-mode-active figcaption,
-html.dark-mode-active blockquote,
-html.dark-mode-active dl,
-html.dark-mode-active dt,
-html.dark-mode-active dd,
-html.dark-mode-active ul,
-html.dark-mode-active ol,
-html.dark-mode-active li {
+html.dark-mode-active nav {
     background-color: transparent !important;
-    color: #e0e0e0 !important;
-    border-color: #333 !important;
 }
 
-/* ─── TEXT ELEMENTS ─── */
+/* ─── TEXT READABILITY ─── */
 html.dark-mode-active p,
-html.dark-mode-active span,
-html.dark-mode-active label,
+html.dark-mode-active span:not([class*="icon"]):not([class*="logo"]):not([class*="btn"]),
 html.dark-mode-active h1,
 html.dark-mode-active h2,
 html.dark-mode-active h3,
 html.dark-mode-active h4,
 html.dark-mode-active h5,
 html.dark-mode-active h6,
+html.dark-mode-active li,
 html.dark-mode-active td,
 html.dark-mode-active th,
-html.dark-mode-active caption,
+html.dark-mode-active label,
 html.dark-mode-active legend,
-html.dark-mode-active strong,
-html.dark-mode-active b,
-html.dark-mode-active em,
-html.dark-mode-active i,
-html.dark-mode-active small,
-html.dark-mode-active mark,
-html.dark-mode-active cite,
-html.dark-mode-active q,
-html.dark-mode-active time,
-html.dark-mode-active address {
-    color: #e0e0e0 !important;
+html.dark-mode-active figcaption,
+html.dark-mode-active blockquote,
+html.dark-mode-active dt,
+html.dark-mode-active dd,
+html.dark-mode-active address,
+html.dark-mode-active caption {
+    color: #ddd !important;
 }
 
-/* ─── LINKS: keep colorful but lighten ─── */
+/* ─── LINKS: blue for visibility on dark ─── */
 html.dark-mode-active a {
     color: #8ab4f8 !important;
 }
@@ -73,100 +56,47 @@ html.dark-mode-active a:visited {
     color: #c58af9 !important;
 }
 
-html.dark-mode-active a:hover {
-    color: #aecbfa !important;
-}
-
-/* ─── TABLES ─── */
+/* ─── TABLES: subtle dark bg ─── */
 html.dark-mode-active table {
     background-color: #1e1e30 !important;
-    border-color: #333 !important;
 }
 
-html.dark-mode-active tr {
-    background-color: transparent !important;
-    border-color: #333 !important;
-}
-
+html.dark-mode-active tr,
 html.dark-mode-active td,
 html.dark-mode-active th {
-    background-color: transparent !important;
     border-color: #333 !important;
 }
 
-html.dark-mode-active tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.03) !important;
-}
-
-/* ─── INPUTS / BUTTONS: look natural, just darkened ─── */
-html.dark-mode-active input,
+/* ─── FORM INPUTS (just bg, keep button styling) ─── */
+html.dark-mode-active input[type="text"],
+html.dark-mode-active input[type="search"],
+html.dark-mode-active input[type="email"],
+html.dark-mode-active input[type="password"],
+html.dark-mode-active input[type="url"],
+html.dark-mode-active input[type="number"],
+html.dark-mode-active input[type="tel"],
 html.dark-mode-active textarea,
 html.dark-mode-active select {
     background-color: #2a2a40 !important;
-    color: #e0e0e0 !important;
+    color: #ddd !important;
     border-color: #444 !important;
 }
 
 html.dark-mode-active input::placeholder,
 html.dark-mode-active textarea::placeholder {
-    color: #888 !important;
+    color: #777 !important;
 }
 
-html.dark-mode-active button,
-html.dark-mode-active input[type="button"],
-html.dark-mode-active input[type="submit"],
-html.dark-mode-active input[type="reset"],
-html.dark-mode-active [role="button"] {
-    background-color: #2a2a45 !important;
-    color: #e0e0e0 !important;
-    border-color: #444 !important;
-}
-
-html.dark-mode-active button:hover,
-html.dark-mode-active input[type="submit"]:hover,
-html.dark-mode-active [role="button"]:hover {
-    background-color: #3a3a55 !important;
-}
-
-/* ─── CODE / PRE ─── */
+/* ─── CODE BLOCKS ─── */
 html.dark-mode-active pre,
-html.dark-mode-active code,
-html.dark-mode-active kbd,
-html.dark-mode-active samp {
+html.dark-mode-active code {
     background-color: #1e1e30 !important;
     color: #d4d4d4 !important;
-    border-color: #333 !important;
 }
 
-/* ─── HORIZONTAL RULES ─── */
+/* ─── HR ─── */
 html.dark-mode-active hr {
     border-color: #333 !important;
-    background-color: #333 !important;
-}
-
-/* ─── IMAGES / VIDEOS / MEDIA: untouched ─── */
-html.dark-mode-active img,
-html.dark-mode-active video,
-html.dark-mode-active canvas,
-html.dark-mode-active picture,
-html.dark-mode-active iframe,
-html.dark-mode-active svg {
-    /* Don't change these at all — keep original colors */
-}
-
-/* ─── PRESERVE OUR EXTENSION UI (exclude from dark overrides) ─── */
-/* These elements have their own dark styling already */
-#ai-assistant-toolbar,
-#ai-assistant-toolbar *,
-#ai-assistant-toast,
-#ai-assistant-quick-actions,
-#ai-assistant-quick-actions *,
-#ai-assistant-summary-modal,
-#ai-assistant-summary-modal *,
-#ai-assistant-summary-backdrop,
-#ai-assistant-loading,
-#ai-assistant-loading * {
-    /* Override the generic dark-mode rules above */
 }
 
 /* ─── SCROLLBAR ─── */
@@ -187,46 +117,12 @@ html.dark-mode-active ::-webkit-scrollbar-thumb:hover {
     background: #666;
 }
 
-/* ─── GOOGLE SPECIFIC ─── */
-html.dark-mode-active .sfbg,
-html.dark-mode-active .RNNXgb,
-html.dark-mode-active .aajZCb,
-html.dark-mode-active .minidiv,
-html.dark-mode-active #searchform,
-html.dark-mode-active .o3j99,
-html.dark-mode-active #hdtb,
-html.dark-mode-active #appbar,
-html.dark-mode-active .dodTBe,
-html.dark-mode-active .liYKde,
-html.dark-mode-active .dG2HIf,
-html.dark-mode-active .MjjYud,
-html.dark-mode-active .hlcw0c,
-html.dark-mode-active .v7W49e,
-html.dark-mode-active .ULSxyf,
-html.dark-mode-active .kp-wholepage,
-html.dark-mode-active .wDYxhc,
-html.dark-mode-active .related-question-pair,
-html.dark-mode-active .g,
-html.dark-mode-active .tF2Cxc,
-html.dark-mode-active .IsZvec,
-html.dark-mode-active .VwiC3b,
-html.dark-mode-active .yuRUbf,
-html.dark-mode-active .eKjLze,
-html.dark-mode-active .MUxGbd {
-    background-color: transparent !important;
-}
-
-/* Google search input */
-html.dark-mode-active .gLFyf {
-    background-color: #2a2a40 !important;
-    color: #e0e0e0 !important;
-}
-
-/* Google cards / knowledge panels */
-html.dark-mode-active .kp-blk,
-html.dark-mode-active .xpdopen,
-html.dark-mode-active .g-blk,
-html.dark-mode-active .ifM9O {
-    background-color: #1e1e30 !important;
-    border-color: #333 !important;
-}
+/* ════════════════════════════════════════════
+   EVERYTHING BELOW IS LEFT COMPLETELY ALONE:
+   ✅ Buttons (all types)
+   ✅ Images, logos, favicons
+   ✅ SVGs, icons, icon fonts
+   ✅ Videos, canvas, iframes
+   ✅ Any element with class containing:
+      icon, logo, btn, button, badge, chip, tag, avatar
+   ════════════════════════════════════════════ */
