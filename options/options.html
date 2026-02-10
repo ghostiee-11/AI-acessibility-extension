@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Accessibility Assistant - Settings</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+    <div class="settings-container">
+        <header class="settings-header">
+            <h1>⚙️ Settings</h1>
+            <p class="subtitle">Configure your AI Accessibility Assistant</p>
+        </header>
+
+        <div class="settings-content">
+            <!-- API Configuration -->
+            <section class="settings-section">
+                <h2>🔑 API Configuration</h2>
+                <p class="section-description">Choose your AI provider and enter your API key</p>
+
+                <div class="form-group">
+                    <label for="apiProvider">AI Provider</label>
+                    <select id="apiProvider" class="form-control">
+                        <option value="groq">Groq (Llama 3.3 70B Versatile)</option>
+                        <option value="gemini">Google Gemini (2.0 Flash)</option>
+                    </select>
+                </div>
+
+                <div class="api-key-section" id="groqSection">
+                    <div class="form-group">
+                        <label for="groqApiKey">Groq API Key</label>
+                        <input type="password" id="groqApiKey" class="form-control" placeholder="gsk_...">
+                        <small class="form-hint">
+                            Get your free API key from <a href="https://console.groq.com/keys" target="_blank">Groq
+                                Console</a>
+                        </small>
+                    </div>
+                </div>
+
+                <div class="api-key-section" id="geminiSection" style="display: none;">
+                    <div class="form-group">
+                        <label for="geminiApiKey">Gemini API Key</label>
+                        <input type="password" id="geminiApiKey" class="form-control" placeholder="AIza...">
+                        <small class="form-hint">
+                            Get your free API key from <a href="https://aistudio.google.com/app/apikey"
+                                target="_blank">Google AI Studio</a>
+                        </small>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" id="testApiBtn">Test API Connection</button>
+                <div class="api-status" id="apiStatus"></div>
+            </section>
+
+            <!-- Text-to-Speech Settings -->
+            <section class="settings-section">
+                <h2>🔊 Text-to-Speech</h2>
+                <p class="section-description">Customize voice and speech settings</p>
+
+                <div class="form-group">
+                    <label for="ttsVoice">Voice</label>
+                    <select id="ttsVoice" class="form-control">
+                        <option value="">Default Voice</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ttsRate">Speech Rate: <span id="rateValue">1.0</span>x</label>
+                    <input type="range" id="ttsRate" class="range-control" min="0.5" max="2.0" step="0.1" value="1.0">
+                </div>
+
+                <div class="form-group">
+                    <label for="ttsPitch">Pitch: <span id="pitchValue">1.0</span></label>
+                    <input type="range" id="ttsPitch" class="range-control" min="0.5" max="2.0" step="0.1" value="1.0">
+                </div>
+
+                <button class="btn btn-secondary" id="testTtsBtn">Test Voice</button>
+            </section>
+
+            <!-- Dark Mode Settings -->
+            <section class="settings-section">
+                <h2>🌙 Dark Mode</h2>
+                <p class="section-description">Customize dark mode behavior</p>
+
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="autoDarkMode">
+                        <span>Automatically enable dark mode on all websites</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- About -->
+            <section class="settings-section">
+                <h2>ℹ️ About</h2>
+                <div class="about-content">
+                    <p><strong>AI Accessibility Assistant</strong></p>
+                    <p>Version 1.0.0</p>
+                    <p>Enhance your browsing with dark mode, text-to-speech, and AI-powered summarization.</p>
+                    <div class="features-list">
+                        <div class="feature-item">✅ Dark mode for any website</div>
+                        <div class="feature-item">✅ Text-to-speech with customizable voices</div>
+                        <div class="feature-item">✅ AI-powered content summarization</div>
+                        <div class="feature-item">✅ Privacy-focused (all data stored locally)</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="settings-footer">
+            <button class="btn btn-success" id="saveBtn">💾 Save Settings</button>
+            <button class="btn btn-secondary" id="resetBtn">🔄 Reset to Defaults</button>
+        </footer>
+
+        <div class="toast" id="toast"></div>
+    </div>
+
+    <script src="options.js" type="module"></script>
+</body>
+
+</html>

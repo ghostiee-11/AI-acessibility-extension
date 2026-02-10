@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Accessibility Assistant</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>🤖 AI Assistant</h1>
+      <p class="subtitle">Accessibility & Summarization</p>
+    </header>
+
+    <div class="features">
+      <!-- Dark Mode Toggle -->
+      <div class="feature-card">
+        <div class="feature-icon">🌙</div>
+        <div class="feature-content">
+          <h3>Dark Mode</h3>
+          <p>Toggle dark mode for this page</p>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="darkModeToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Text-to-Speech -->
+      <div class="feature-card">
+        <div class="feature-icon">🔊</div>
+        <div class="feature-content">
+          <h3>Read Page</h3>
+          <p>Listen to page content</p>
+        </div>
+        <button class="action-btn" id="readPageBtn">Read</button>
+      </div>
+
+      <!-- Summarize -->
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <div class="feature-content">
+          <h3>Summarize</h3>
+          <p>AI-powered summary</p>
+        </div>
+        <button class="action-btn primary" id="summarizeBtn">Summarize</button>
+      </div>
+
+      <!-- Focus Mode -->
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-content">
+          <h3>Focus Mode</h3>
+          <p>Remove distractions</p>
+        </div>
+        <button class="action-btn" id="focusModeBtn">Focus</button>
+      </div>
+
+      <!-- TTS Controls -->
+      <div class="feature-card tts-controls" id="ttsControls" style="display: none;">
+        <div class="feature-icon">🎵</div>
+        <div class="feature-content">
+          <h3>Speech Controls</h3>
+          <div class="control-buttons">
+            <button class="control-btn" id="pauseBtn">⏸️ Pause</button>
+            <button class="control-btn" id="resumeBtn">▶️ Resume</button>
+            <button class="control-btn" id="stopBtn">⏹️ Stop</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="popup-footer">
+      <button class="settings-btn" id="settingsBtn">
+        ⚙️ Settings
+      </button>
+      <div class="status" id="status">
+        <span class="status-dot"></span>
+        <span id="statusText">Ready</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+
+</html>
